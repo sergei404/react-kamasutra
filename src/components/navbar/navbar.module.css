@@ -1,0 +1,30 @@
+.nav {
+  grid-area: nav;
+  max-height: calc(100vh - 60px - 15px);
+  background-color: rgb(207, 178, 142);
+}
+
+.list {
+  padding: 20px;
+}
+
+.item {
+  font-size: 24px;
+  text-shadow: 2px 3px 2px rgb(27, 26, 26);
+  margin-bottom: 15px;
+}
+
+.item:last-of-type {
+  margin-top: 75px;
+}
+
+.item a {
+  color: antiquewhite;
+}
+
+a.active {
+  color: rgb(27, 26, 26);
+  text-shadow: 1px 1px 0 antiquewhite;
+  transition: 0.3s ease-in-out;
+}
+

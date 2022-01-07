@@ -1,0 +1,26 @@
+.dialogs {
+  display: flex;
+  padding: 20px;
+}
+
+.dialog-names {
+  margin-right: 30px;
+  padding-right: 30px;
+  border-right: 2px solid #a4b2f0;
+}
+
+.messages ul {
+  margin-bottom: 30px;
+}
+
+.new-message label {
+  display: block;
+}
+
+.new-message textarea {
+  width: 80%;
+  height: 7vh;
+  border: 2px solid rgb(201, 215, 245);
+  outline: none;
+  background-color: rgb(225, 230, 240);
+}

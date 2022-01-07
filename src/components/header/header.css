@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  align-items: center;
+  grid-area: header;
+  background-color: rgb(226, 200, 168);
+  padding: 0 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  /* background-color: transparent; */
+}

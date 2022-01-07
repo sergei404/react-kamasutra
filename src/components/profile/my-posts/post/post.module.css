@@ -1,0 +1,35 @@
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: chocolate;
+}
+
+.avatar {
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.text {
+  margin-right: auto;
+}
+
+.like {
+  display: flex;
+  justify-content: space-between;
+  width: 70px;
+  min-width: 70px;
+}
+
+.btn {
+  padding: 3px 8px;
+  background-color: darkgray;
+  color: rgb(224, 208, 189);
+  border-radius: 10px;
+  margin-right: 10px;
+}

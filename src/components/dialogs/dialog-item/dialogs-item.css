@@ -1,0 +1,18 @@
+.item {
+  font-size: 18px;
+}
+
+.item + .item {
+  margin-top: 16px;
+}
+
+.item a {
+  color: #80859c;
+}
+
+.item a.active {
+  color: #88a188;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: underline;
+}
