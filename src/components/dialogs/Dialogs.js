@@ -1,19 +1,17 @@
 import DialogsItem from './dialog-item/DialogsItem';
 import './dialogs.css'
 import Message from './message/Message';
-//import { useRef } from "react";
-import {updateMessagetActionCreator, addMessageActionCreator} from '../../redax/dialogs-reducer'
+// import {updateMessagetActionCreator, addMessageActionCreator} from '../../redax/dialogs-reducer'
 
-export default function Dialogs({dialogsPage: {dialogs, messages, newMessageIext}, dispatch}) {
-  // const refElem = useRef(null)
+export default function Dialogs({dialogs, messages, newMessageIext, messageChange, addMessage}) {
 
   const addMessageText = () => {
-    dispatch(addMessageActionCreator())
+    addMessage()
   }
 
   const onMessageChange = (evt) => {
     let message = evt.target.value
-    dispatch(updateMessagetActionCreator(message))
+    messageChange(message)
   }
 
   return (

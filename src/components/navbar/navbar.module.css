@@ -24,7 +24,7 @@
 
 a.active {
   color: rgb(27, 26, 26);
-  text-shadow: 1px 1px 0 antiquewhite;
+  text-shadow: 2px 2px 2px rgb(134, 131, 131);
   transition: 0.3s ease-in-out;
 }
 
