@@ -3,8 +3,7 @@ import './dialogs.css'
 import Message from './message/Message';
 // import {updateMessagetActionCreator, addMessageActionCreator} from '../../redax/dialogs-reducer'
 
-export default function Dialogs({dialogs, messages, newMessageIext, messageChange, addMessage}) {
-
+export default function Dialogs({dialogsPage: {dialogs, messages, newMessageIext}, addMessage, messageChange}) {
   const addMessageText = () => {
     addMessage()
   }

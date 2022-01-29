@@ -2,8 +2,7 @@ import AddPost from "./add-post/AddPost";
 import s from "./my-posts.module.css";
 import Post from "./post/Post";
 
-export default function MyPosts({posts, updatePostText, addPost, newPostText}) {
-  
+export default function MyPosts({profilePage: {newPostText, posts}, addPost, updatePostText}) {
   return (
     <div className={s["my-posts"]}>
       <h2>My Posts</h2>

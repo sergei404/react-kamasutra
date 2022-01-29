@@ -21,24 +21,29 @@ let initialState = {
 export const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST:
-      let newPost = {
-        id: state.posts.length + 1,
-        message: state.newPostText,
-        like: 0,
-      };
-      state.posts.push(newPost);
-
-      state.newPostText = "";
-      return state;
+      return {
+        ...state,
+        posts: [
+          ...state.posts, 
+          {
+            id: state.posts.length + 1,
+            message: state.newPostText,
+            like: 0,
+          }
+        ],
+        newPostText: ""
+      }
     case CHANGE_NEW_POST_TEXT:
-      state.newPostText = action.text;
-      return state;
+      return {
+        ...state, 
+        newPostText: action.text
+      }
     default:
       return state;
   }
 };
 
-export const updatePostTexttActionCreator = (text) => {
+export const updatePostTextActionCreator = (text) => {
   return {
     type: CHANGE_NEW_POST_TEXT,
     text,

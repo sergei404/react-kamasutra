@@ -18,6 +18,9 @@ export default function Navbar() {
           <a href="#s">Music</a>
         </li>
         <li className={s.item}>
+         <NavLink className={({ isActive }) =>(isActive ? s.active : "")} to="/users">Users</NavLink>
+        </li>
+        <li className={s.item}>
           <a href="#s">Settings</a>
         </li>
       </ul>

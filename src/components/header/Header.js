@@ -5,7 +5,7 @@ export default function Header() {
     <header className="header">
       <div className="logo">
         <img
-          src="https://pngimage.net/wp-content/uploads/2018/05/earth-illustration-png-5.png"
+          src="https://www.pngplay.com/wp-content/uploads/11/Fallout-Transparent-File.png"
           alt="logo"
         />
       </div>

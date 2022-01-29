@@ -4,31 +4,43 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import store from "./redax/redux-store";
-import StoreContext from "./StoreContext";
+//import StoreContext from "./StoreContext";
 //import Provider from "./StoreContext";
+import { Provider } from "react-redux";
 
-export function rerenderEntrytree(state) {
-  ReactDOM.render(
-    <BrowserRouter>
-      <React.StrictMode>
-        {/* <Provider value={state}>
-            <App/>
-        </Provider> */}
-        <StoreContext.Provider value={state}>
-          <App />
-          {/* <App data={state} dispatch={store.dispatch.bind(store)} /> */}
-        </StoreContext.Provider>
-      </React.StrictMode>
-    </BrowserRouter>,
-    document.getElementById("root")
-  );
-}
+ReactDOM.render(
+  <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
 
-rerenderEntrytree(store);
-store.subscribe(() => {
-  let state = store;
-  rerenderEntrytree(state);
-});
+// export function rerenderEntrytree() {
+//   ReactDOM.render(
+//     <BrowserRouter>
+//       <React.StrictMode>
+//         <Provider store={store}>
+//             <App/>
+//         </Provider>
+//         {/* <StoreContext.Provider value={store}>
+//           <App />
+//           <App data={state} dispatch={store.dispatch.bind(store)} />
+//         </StoreContext.Provider> */}
+//       </React.StrictMode>
+//     </BrowserRouter>,
+//     document.getElementById("root")
+//   );
+// }
+
+// rerenderEntrytree();
+
+// store.subscribe(() => {
+//   rerenderEntrytree();
+// });
 
 // {
 //   /* <StoreContext.Provider value={store}>
