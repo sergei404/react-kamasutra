@@ -1,55 +1,16 @@
 const UNFOLLOW = "UNFOLLOW";
 const SET_USERS = "SET_USERS";
-//const FOLLOW = "FOLLOW";
+const SET_CURRENT_PAGE = "SET_CURRENT_PAGE"
+const SET_TOTAL_USERS_COUNT = "SET_TOTAL_USERS_COUNT"
+const TOGGLE_ISFETCHING = "TOGGLE_ISFETCHING"
+
 
 let initialState = {
-  users: []
-  // users: [
-  //   {
-  //     id: 1,
-  //     image: 'https://www.pngplay.com/wp-content/uploads/11/Fallout-Transparent-File.png',
-  //     name: 'Dnitry K',
-  //     about: 'Lorem iamet consectetur adipisicing elit.',
-  //     location: {
-  //       country: 'Belarus',
-  //       city: 'Minsk',
-  //     },
-  //     follow: true
-  //   },
-  //   {
-  //     id: 2,
-  //     image: 'https://www.pngplay.com/wp-content/uploads/11/Fallout-Transparent-File.png',
-  //     name: 'Svetlana D',
-  //     about: 'Consectetur adipisicing lorem iamet elit.',
-  //     location: {
-  //       country: 'Belarus',
-  //       city: 'Minsk',
-  //     },
-  //     follow: true
-  //   },
-  //   {
-  //     id: 3,
-  //     image: 'https://www.pngplay.com/wp-content/uploads/11/Fallout-Transparent-File.png',
-  //     name: 'Sergei S',
-  //     about: 'Adipisicing elit.',
-  //     location: {
-  //       country: 'Ukraine',
-  //       city: 'Kiev',
-  //     },
-  //     follow: false
-  //   },
-  //   {
-  //     id: 4,
-  //     image: 'https://www.pngplay.com/wp-content/uploads/11/Fallout-Transparent-File.png',
-  //     name: 'Andrei T',
-  //     about: 'Lorem iamet consectetur adipisicing elit.',
-  //     location: {
-  //       country: 'Unaited State',
-  //       city: 'Philadelphia',
-  //     },
-  //     follow: false
-  //   },
-  // ],
+  users: [],
+  pageSize: 15,
+  totalUserCount: 0,
+  currentPage: 1,
+  isFetching: true
 };
 
 export const usersReducer = (state = initialState, action) => {
@@ -68,7 +29,22 @@ export const usersReducer = (state = initialState, action) => {
         return {
           ...state, 
           users: [...action.users]
-          //users: [...state.users,...action.users]
+        }
+      case SET_CURRENT_PAGE:
+        return {
+          ...state, 
+          currentPage: action.currentPage
+        }
+      case SET_TOTAL_USERS_COUNT:
+        return {
+          ...state, 
+          totalUserCount: action.totalUserCount
+        }
+      case TOGGLE_ISFETCHING:
+        console.log(action.fetching);
+        return {
+          ...state, 
+          isFetching: action.fetching
         }
     default:
       return state;
@@ -89,9 +65,30 @@ export const unfollowAC = (userId) => {
   };
 };
 
+export const setCurrentPageAC = (currentPage) => {
+  return {
+    type: SET_CURRENT_PAGE,
+    currentPage
+  };
+};
+
+export const setTotalUsersCountAC = (totalUserCount) => {
+  return {
+    type: SET_TOTAL_USERS_COUNT,
+    totalUserCount
+  };
+};
+
 export const setUsersAC = (users) => {
   return {
     type: SET_USERS,
     users
+  };
+};
+
+export const toggleIsFetchingAC = (fetching) => {
+  return {
+    type: SET_USERS,
+    fetching
   };
 };

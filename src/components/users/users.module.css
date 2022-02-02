@@ -1,3 +1,27 @@
+.pogination  {
+  text-align: center;
+  padding-top : 15px;
+}
+
+.pogination span {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  color: #163d3d;
+  font-size: 18px;
+  border: 2px solid #deb887;
+  cursor: pointer;
+} 
+
+
+.active {
+  font-weight: bold;
+}
+
+.pogination span + span {
+  margin-left: 25px;
+}
+
 
 .show-more {
   text-align: center;
